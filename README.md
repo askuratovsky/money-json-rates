@@ -1,5 +1,7 @@
 # JsonRates
 
+[![Build Status](https://travis-ci.org/askuratovsky/money-json-rates.svg?branch=master)](https://travis-ci.org/askuratovsky/money-json-rates)
+
 This gem extends Money::Bank::VariableExchange of gem [money](https://github.com/RubyMoney/money) and gives you access to the current exchange rates using jsonrates.com api
 
 ## Features
