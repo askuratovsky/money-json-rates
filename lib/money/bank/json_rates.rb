@@ -1,4 +1,4 @@
-require "json_rates/version"
+require 'money/bank/json_rates/version'
 
 class Money
   module Bank
