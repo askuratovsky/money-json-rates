@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "money-json-rates"
-  spec.version       = '0.0.2'
+  spec.version       = '0.0.3'
   spec.authors       = ["Andrey Skuratovsky"]
   spec.email         = ["skuratowsky@gmail.com"]
   spec.summary       = "Access the jsonrates.com for gem money"
