@@ -29,7 +29,7 @@ Or install it yourself as:
     # create new bank with block specifying rounding of exchange result
     bank = Money::Bank::JsonRates.new {|n| n.round(4)} # round result to 4 digits after point
 
-    # specify your api_key from [jsonrates.com](http://jsonrates.com/)
+    # specify your api_key from jsonrates.com
     bank.api_key = xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     # set the seconds after than the current rates are automatically expired
