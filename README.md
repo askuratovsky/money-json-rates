@@ -45,14 +45,14 @@ Also you can setup JsonRates as default_bank in money initializer in config/init
     MoneyRails.configure do |config|
 
       bank = Money::Bank::JsonRates.new
-      bank.api_key = xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      bank.api_key = 'xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
       Money.default_bank = bank
 
     end
 
 An `NoApiKey` will be thrown if api_key was not specified.
 
-An `JsonRatesRequestError` will be thrown if jsonrates.com api error on api request.
+An `JsonRatesRequestError` will be thrown if jsonrates.com api returns error on api request.
 
 ## Contributing
 
