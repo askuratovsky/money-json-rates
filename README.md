@@ -1,6 +1,6 @@
 # JsonRates
 
-This gem extends Money::Bank::VariableExchange and gives you access to the current exchange rates using jsonrates.com api
+This gem extends Money::Bank::VariableExchange of gem [money](https://github.com/RubyMoney/money) and gives you access to the current exchange rates using jsonrates.com api
 
 ## Features
 
