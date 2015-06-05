@@ -55,7 +55,7 @@ bank.ttl_in_seconds = 7200 # 2 hours ttl
 Money.default_bank = bank
 ```
 
-Also you can setup JsonRates as default_bank for [money rails](https://github.com/RubyMoney/money-rails) gem in config/initializers/money.rb
+Also you can setup JsonRates as default_bank for [money-rails](https://github.com/RubyMoney/money-rails) gem in config/initializers/money.rb
 
 ```ruby
 require 'money/bank/json_rates'
