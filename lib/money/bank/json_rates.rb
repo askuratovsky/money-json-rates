@@ -141,7 +141,7 @@ class Money
       #
       # @return [URI::HTTP]
       def build_uri(from, to)
-        raise NoApiKey if api_key.blank?
+        raise NoApiKey if api_key.nil? || api_key.blank?
         uri = URI::HTTP.build(
           :host  => SERVICE_HOST,
           :path  => SERVICE_PATH,
