@@ -1,9 +1,12 @@
+require 'money'
+require 'open-uri'
 require 'money/bank/json_rates/version'
 
 class Money
   module Bank
 
     class JsonRatesRequestError < StandardError ; end
+
     class NoApiKey < StandardError
       def message
         "Blank api_key! You should get your api_key on jsonrates.com and specify it like JsonRates.api_key = YOUR_API_KEY"
