@@ -2,6 +2,18 @@
 
 This gem extends Money::Bank::VariableExchange with Money::Bank::JsonRates and gives you access to the current [jsonrates.com](http://jsonrates.com/) exchange rates using json api.
 
+## Features
+
+This gem uses [jsonrates.com api](http://jsonrates.com/), so
+
+- it's free
+- supports 168 currencies
+- precision of rates up to 8 digits after point
+- uses fast and reliable json api
+- average response time < 20ms
+- no limitations for requesting the API
+- supports caching currency rates
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -39,20 +51,21 @@ Or install it yourself as:
     # set default bank to instance
     Money.default_bank = bank
 
-Also you can setup JsonRates as default_bank in money initializer in config/initializers/money.rb
+Also you can setup JsonRates as default_bank in config/initializers/money.rb
 
     require 'money/bank/json_rates'
     MoneyRails.configure do |config|
 
       bank = Money::Bank::JsonRates.new
       bank.api_key = 'xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-      Money.default_bank = bank
+      config.default_bank = bank
 
     end
 
 An `NoApiKey` will be thrown if api_key was not specified.
 
 An `JsonRatesRequestError` will be thrown if jsonrates.com api returns error on api request.
+
 
 ## Contributing
 
