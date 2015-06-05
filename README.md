@@ -40,18 +40,19 @@ First, you should to register account on [jsonrates.com](http://jsonrates.com/) 
 require 'money'
 require 'money/bank/json_rates'
 
-# create new bank
+# (optional)
+# set the seconds after than the current rates are automatically expired
+# by default, they never expire
+Money::Bank::JsonRates.ttl_in_seconds = 7200 # 2 hours ttl
+
+# create new bank instance
 bank = Money::Bank::JsonRates.new
 
-# create new bank with block specifying rounding of exchange result
+# create new bank instance with block specifying rounding of exchange result
 bank = Money::Bank::JsonRates.new {|n| n.round(4)} # round result to 4 digits after point
 
 # specify your api_key from jsonrates.com
 bank.api_key = 'xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-
-# set the seconds after than the current rates are automatically expired
-# by default, they never expire
-bank.ttl_in_seconds = 7200 # 2 hours ttl
 
 # set default bank to instance
 Money.default_bank = bank
@@ -74,6 +75,22 @@ An `NoApiKey` will be thrown if api_key was not specified.
 
 An `JsonRatesRequestError` will be thrown if jsonrates.com api returns error on api request.
 
+
+## Refs
+
+Created using `VariableExchange` implementation and using `google_currency` basics.
+
+- https://github.com/RubyMoney/money
+- https://github.com/RubyMoney/google_currency
+
+More implementations:
+
+- https://github.com/RubyMoney/eu_central_bank
+- https://github.com/matiaskorhonen/nordea
+- https://github.com/slbug/nbrb_currency
+- https://github.com/spk/money-open-exchange-rates
+- https://github.com/atwam/money-historical-bank
+- https://github.com/rmustafin/russian_central_bank
 
 ## Contributing
 
