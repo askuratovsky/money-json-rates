@@ -1,6 +1,6 @@
 # JsonRates
 
-This gem extends Money::Bank::VariableExchange with Money::Bank::JsonRates and gives you access to the current [jsonrates.com](http://jsonrates.com/) exchange rates using json api.
+This gem extends Money::Bank::VariableExchange and gives you access to the current exchange rates using jsonrates.com api
 
 ## Features
 
@@ -32,35 +32,41 @@ Or install it yourself as:
 
 ## Usage
 
-    require 'money'
-    require 'money/bank/json_rates'
+First, you should to register account on [jsonrates.com](http://jsonrates.com/) and get your personal api_key.
 
-    # create new bank
-    bank = Money::Bank::JsonRates.new
+```ruby
+require 'money'
+require 'money/bank/json_rates'
 
-    # create new bank with block specifying rounding of exchange result
-    bank = Money::Bank::JsonRates.new {|n| n.round(4)} # round result to 4 digits after point
+# create new bank
+bank = Money::Bank::JsonRates.new
 
-    # specify your api_key from jsonrates.com
-    bank.api_key = 'xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+# create new bank with block specifying rounding of exchange result
+bank = Money::Bank::JsonRates.new {|n| n.round(4)} # round result to 4 digits after point
 
-    # set the seconds after than the current rates are automatically expired
-    # by default, they never expire
-    bank.ttl_in_seconds = 86400
+# specify your api_key from jsonrates.com
+bank.api_key = 'xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
-    # set default bank to instance
-    Money.default_bank = bank
+# set the seconds after than the current rates are automatically expired
+# by default, they never expire
+bank.ttl_in_seconds = 86400
+
+# set default bank to instance
+Money.default_bank = bank
+```
 
 Also you can setup JsonRates as default_bank in config/initializers/money.rb
 
-    require 'money/bank/json_rates'
-    MoneyRails.configure do |config|
+```ruby
+require 'money/bank/json_rates'
+MoneyRails.configure do |config|
 
-      bank = Money::Bank::JsonRates.new
-      bank.api_key = 'xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-      config.default_bank = bank
+  bank = Money::Bank::JsonRates.new
+  bank.api_key = 'xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+  config.default_bank = bank
 
-    end
+end
+```
 
 An `NoApiKey` will be thrown if api_key was not specified.
 
