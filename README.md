@@ -30,7 +30,7 @@ Or install it yourself as:
     bank = Money::Bank::JsonRates.new {|n| n.round(4)} # round result to 4 digits after point
 
     # specify your api_key from jsonrates.com
-    bank.api_key = xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    bank.api_key = 'xx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
     # set the seconds after than the current rates are automatically expired
     # by default, they never expire
