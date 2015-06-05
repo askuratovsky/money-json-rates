@@ -19,8 +19,7 @@ class Money
 
       # @return [Hash] Stores the currently known rates.
       attr_reader :rates
-
-      attr_accessor :cache, :api_key
+      attr_accessor :api_key
 
       class << self
         # @return [Integer] Returns the Time To Live (TTL) in seconds.
