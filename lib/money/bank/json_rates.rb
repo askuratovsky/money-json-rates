@@ -1,6 +1,5 @@
 require 'money'
 require 'open-uri'
-require 'money/bank/json_rates/version'
 
 class Money
   module Bank

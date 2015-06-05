@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'money/bank/json_rates/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "money-json-rates"
-  spec.version       = Money::Bank::JsonRates::VERSION
+  spec.version       = '0.0.1'
   spec.authors       = ["Andrey Skuratovsky"]
   spec.email         = ["skuratowsky@gmail.com"]
   spec.summary       = "Access the jsonrates.com for gem money"
