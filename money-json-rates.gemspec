@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Andrey Skuratovsky"]
   spec.email         = ["skuratowsky@gmail.com"]
   spec.summary       = "Access the jsonrates.com for gem money"
-  spec.description   = "JsonRates extends Money::Bank::Base and gives access to the current exchange rates using http://jsonrates.com/ api."
+  spec.description   = "Ruby Money::Bank interface for jsonrates.com exchange data"
   spec.homepage      = "http://github.com/askuratovsky/#{spec.name}"
   spec.license       = "MIT"
 
