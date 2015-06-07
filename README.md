@@ -1,4 +1,4 @@
-# JsonRates
+# Money::Bank::JsonRates
 
 [![Build Status](https://travis-ci.org/askuratovsky/money-json-rates.svg?branch=master)](https://travis-ci.org/askuratovsky/money-json-rates)
 
