@@ -47,6 +47,12 @@ require 'money/bank/json_rates'
 # by default, they never expire
 Money::Bank::JsonRates.ttl_in_seconds = 7200 # 2 hours ttl
 
+# set careful mode - each rate stores with created_at time to cache and will be flushed
+# only if their time is out. If you get exception while request new rate, bank will
+# return cached value if present
+# by default false
+Money::Bank::JsonRates.rates_careful = true
+
 # create new bank instance
 bank = Money::Bank::JsonRates.new
 
