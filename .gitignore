@@ -1,3 +1,6 @@
+## MAC OS
+.DS_Store
+
 /.bundle/
 /.yardoc
 /Gemfile.lock
@@ -12,3 +15,7 @@
 *.o
 *.a
 mkmf.log
+
+# RVM
+.ruby-version
+.ruby-gemset
