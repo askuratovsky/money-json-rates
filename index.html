@@ -43,12 +43,12 @@
 
 <p><a href="https://travis-ci.org/askuratovsky/money-json-rates"><img src="https://travis-ci.org/askuratovsky/money-json-rates.svg?branch=master" alt="Build Status"></a></p>
 
-<p>This gem extends Money::Bank::VariableExchange of gem <a href="https://github.com/RubyMoney/money">money</a> and gives you access to the current exchange rates</p>
+<p>This gem extends Money::Bank::VariableExchange of gem <a href="https://github.com/RubyMoney/money">money</a> and gives you access to the current exchange rates using jsonrates.com api</p>
 
 <h2>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
-<p>This gem uses <a href="http://jsonrates.com/">jsonrates.com api</a>, so</p>
+<p>This gem uses <a href="http://jsonrates.com/">jsonrates.com</a> api, so</p>
 
 <ul>
 <li>it's free</li>
@@ -89,6 +89,12 @@
 <span class="pl-c"># set the seconds after than the current rates are automatically expired</span>
 <span class="pl-c"># by default, they never expire</span>
 <span class="pl-c1">Money</span>::<span class="pl-c1">Bank</span>::<span class="pl-c1">JsonRates</span>.ttl_in_seconds <span class="pl-k">=</span> <span class="pl-c1">7200</span> <span class="pl-c"># 2 hours ttl</span>
+
+<span class="pl-c"># set careful mode - each rate stores with created_at time to cache and will be flushed</span>
+<span class="pl-c"># only if their time is out. If you get exception while request new rate, bank will</span>
+<span class="pl-c"># return cached value if present</span>
+<span class="pl-c"># by default false</span>
+<span class="pl-c1">Money</span>::<span class="pl-c1">Bank</span>::<span class="pl-c1">JsonRates</span>.rates_careful <span class="pl-k">=</span> <span class="pl-c1">true</span>
 
 <span class="pl-c"># create new bank instance</span>
 bank <span class="pl-k">=</span> <span class="pl-c1">Money</span>::<span class="pl-c1">Bank</span>::<span class="pl-c1">JsonRates</span>.<span class="pl-k">new</span>
