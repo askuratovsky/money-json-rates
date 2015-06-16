@@ -6,6 +6,12 @@ This gem extends Money::Bank::VariableExchange of gem [money](https://github.com
 
 [GitHub Pages Website](http://askuratovsky.github.io/money-json-rates/)
 
+## Warning
+
+Since jsonrates is [becoming a part of apilayer’s currencylayer API](http://jsonrates.com/about/), jsonrates api is now deprecated. The previous jsonrates API and this gem shall be deprecated but will still be available for use until June 30th 11:59:59 PM London time.
+
+Please register new account on [currencylayer.com](https://currencylayer.com/) and install gem [currencylayer](https://github.com/askuratovsky/currencylayer).
+
 ## Features
 
 This gem uses [jsonrates.com api](http://jsonrates.com/), so
